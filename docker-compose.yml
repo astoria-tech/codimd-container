@@ -22,6 +22,8 @@ services:
     networks:
       backend:
     restart: always
+    ports:
+      - "5432"
 
   # MySQL example
   # Most of the documentation that applies to PostgreSQL applies also to MySQL
@@ -46,6 +48,8 @@ services:
   #    restart: always
 
   app:
+    labels:
+      shipyard.route: '/'
     # Uncomment the following section to build the image yourself:
     #build:
     #  context: .
